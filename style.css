@@ -96,6 +96,9 @@ main{
 }
 .lido{
     cursor: pointer;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border-radius: 15px;
 }
 #close{
     align-self: flex-end;

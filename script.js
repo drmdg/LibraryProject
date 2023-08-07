@@ -38,6 +38,7 @@ function Book(name,autor,pag,read) {
 function displaycontent(){
     let content=document.getElementById('display');
     content.innerHTML="";
+    let i =0;
     for(let book of mylibrary){
         let newdiv=document.createElement('div');
         newdiv.classList.add('book');
@@ -47,7 +48,7 @@ function displaycontent(){
                             <button class="lido">Livro ${book.read}</button>
                             <p id="${book.name}" class="remove">Remover livro</p>`
         content.appendChild(newdiv);
-        document.getElementsByClassName("lido")[0].addEventListener('click',(e)=>{
+        document.getElementsByClassName("lido")[i].addEventListener('click',(e)=>{
             if(e.target.innerHTML=="Livro Lido"){
                 e.target.innerHTML="Livro Não lido";
             }else{
@@ -55,6 +56,7 @@ function displaycontent(){
             }
         });
         document.getElementById(`${book.name}`).addEventListener('click',removelivro)
+        i++;
     }
     
 }
